@@ -17,6 +17,12 @@ function addSniffyHeaders(details: chrome.webRequest.WebRequestHeadersDetails) {
 }
 
 chrome.runtime.onInstalled.addListener(() => {
+    chrome.browserAction.onClicked.addListener((tab : chrome.tabs.Tab) => {
+        chrome.storage.local.get((settings: SniffyExtensionSettings) => {
+            settings.active = !settings.active;
+            chrome.storage.local.set(settings, updateListeners);
+        });
+    });
     chrome.storage.local.set(new SniffyExtensionSettings(true, true, true), updateListeners);
 });
 
@@ -26,6 +32,9 @@ function updateListeners() {
         chrome.webRequest.onBeforeSendHeaders.removeListener(addSniffyHeaders);
 
         if (settings.active) {
+
+            chrome.browserAction.setIcon({path: "on.png"});
+
             chrome.webRequest.onBeforeSendHeaders.addListener(
                 addSniffyHeaders,
                 {
@@ -33,6 +42,9 @@ function updateListeners() {
                 },
                 ["blocking", "requestHeaders"]
             );
+
+        } else {
+            chrome.browserAction.setIcon({path: "off.png"});
         }
 
     })
