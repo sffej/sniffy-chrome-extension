@@ -11,6 +11,13 @@ function addSniffyHeaders(details: chrome.webRequest.WebRequestHeadersDetails) {
         "name": "Sniffy-Enabled",
         "value": "true"
     });
+    details.requestHeaders.push({
+        "name": "Sniffy-Inject-Html-Enabled",
+        "value": "true"
+    });
+    return {
+        requestHeaders : details.requestHeaders
+    };
 }
 
 chrome.runtime.onInstalled.addListener(() => {

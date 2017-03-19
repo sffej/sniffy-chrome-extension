@@ -1,14 +1,14 @@
 {
-  "name": "chrome-extension-typescript-starter",
-  "version": "1.0.0",
-  "description": "chrome-extension-typescript-starter",
+  "name": "sniffy-chrome-extension",
+  "version": "0.0.1",
+  "description": "Sniffy Chrome Extension adds Enable-Sniffy headers to all requests, thus allowing you to enable Sniffy on demand",
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/.bin/webpack",
     "watch": "./node_modules/.bin/webpack -w"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Dmitry Bedrin",
+  "license": "MIT",
   "dependencies": {
     "jquery": "^3.1.1",
     "moment": "^2.17.1"
