@@ -11,9 +11,6 @@ function addSniffyHeaders(details: chrome.webRequest.WebRequestHeadersDetails) {
         "name": "Sniffy-Enabled",
         "value": "true"
     });
-    return {
-        requestHeaders : details.requestHeaders
-    };
 }
 
 chrome.runtime.onInstalled.addListener(() => {

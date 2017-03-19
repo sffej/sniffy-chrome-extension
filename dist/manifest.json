@@ -1,39 +1,42 @@
 {
   "manifest_version": 2,
-
   "name": "Sniffy Chrome Extension",
-  "description": "Sniffy Chrome Extension Description",
-  "version": "1.0",
-
+  "description": "Sniffy Chrome Extension adds Enable-Sniffy headers to all requests, thus allowing you to enable Sniffy on demand",
+  "version": "0.0.0.1",
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "96": "icon96.png"
+  },
   /*"options_ui": {
     "page": "options.html",
     "chrome_style": true
   },*/
-
   "browser_action": {
     "default_icon": "off.png",
     "default-title": "Sniffy"
     //"default_popup": "popup.html"
   },
-
   /*"content_scripts": [
       {
           "matches": ["<all_urls>"],
           "js": ["js/vendor.js", "js/content_script.js"]
       }
   ],*/
-
   "background": {
-    "scripts": ["js/vendor.js", "js/background.js"]
+    "scripts": [
+      "js/vendor.js",
+      "js/background.js"
+    ]
   },
-
   "permissions": [
     "storage",
     "webRequest",
     "webRequestBlocking",
     "<all_urls>"
   ],
-	"web_accessible_resources": [
-		"on.png","off.png"
-	]
+  "web_accessible_resources": [
+    "on.png",
+    "off.png"
+  ]
 }
