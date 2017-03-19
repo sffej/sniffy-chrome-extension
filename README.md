@@ -1,33 +1,14 @@
-# Chrome Extension TypeScript Starter
+# Sniffy Chrome Extension
 
-Chrome Extension, TypeScript and Visual Studio Code
+Sniffy Chrome Extension adds Enable-Sniffy headers to all requests, thus allowing you to enable Sniffy on demand.
+More details at [sniffy.io](http://sniffy.io)
+
+# Building
 
 ## Prerequisites
 
 * [node + npm](https://nodejs.org/) (Current Version)
-
-## Option
-
-* [Visual Studio Code](https://code.visualstudio.com/)
-
-## Includes the following
-
-* TypeScript
-* Webpack
-* Moment.js
-* jQuery
-* Example Code
-    * Chrome Storage
-    * Options Version 2
-    * content script
-    * count up badge number
-    * background
-
-## Project Structure
-
-* src: TypeScript source files
-* dist: Chrome Extension directory
-* dist/js: Generated JavaScript files
+* [Visual Studio Code](https://code.visualstudio.com/) (Optional)
 
 ## Setup
 
@@ -35,25 +16,19 @@ Chrome Extension, TypeScript and Visual Studio Code
 npm install
 ```
 
-## Import as Visual Studio Code project
-
-...
-
-## Build by watch mode
-
-### terminal
+## Build
 
 ```
 npm run build
 ```
 
-### Visual Studio Code
+### Hack
 
-Run watch mode.
+Run watch mode in Visual Studio Code
 
 type `Ctrl + Shift + B`
 
-## Read extension to chrome
+## Install extension to chrome
 
-Read `dist` directory
+Select `Settings` / `Extensions` / `Load unpacked extension` and select `dist` folder
 
