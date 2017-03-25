@@ -21,14 +21,20 @@ function addSniffyHeaders(details: chrome.webRequest.WebRequestHeadersDetails) {
 }
 
 chrome.runtime.onInstalled.addListener(() => {
+    chrome.storage.local.set(new SniffyExtensionSettings(true, true, true), updateListeners);
+});
+
+registerBrowserActionListener();
+updateListeners();
+
+function registerBrowserActionListener() {
     chrome.browserAction.onClicked.addListener((tab : chrome.tabs.Tab) => {
         chrome.storage.local.get((settings: SniffyExtensionSettings) => {
             settings.active = !settings.active;
             chrome.storage.local.set(settings, updateListeners);
         });
     });
-    chrome.storage.local.set(new SniffyExtensionSettings(true, true, true), updateListeners);
-});
+}
 
 function updateListeners() {
     chrome.storage.local.get((settings: SniffyExtensionSettings) => {
