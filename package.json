@@ -1,6 +1,6 @@
 {
   "name": "sniffy-chrome-extension",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Sniffy Chrome Extension adds Enable-Sniffy headers to all requests, thus allowing you to enable Sniffy on demand",
   "main": "index.js",
   "scripts": {
